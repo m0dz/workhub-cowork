@@ -42,7 +42,7 @@ const login = async (req, res, next) => {
 
         // genera token de acceso
 
-        const token = jwt.sign({id: usuario._id, email: usuario.email, rol: usuario.rol}, process.env.SECRET_KEY, {expiresIn: '8h'})
+        const token = jwt.sign({id: usuario._id, email: usuario.email, rol: usuario.rol}, process.env.JWT_SECRET, {expiresIn: '8h'})
 
 
         // respuesta al cliente con su información de acceso
